@@ -22,11 +22,11 @@ check.addEventListener('click', () => {
     if (guessed_num) {
         if (guessed_num > secretNumber) {
             guess--
-            displayMessage('greater')
+            displayMessage('guess low')
             chanceMessage(`You have ${guess} guesses left`)
         } else if (guessed_num < secretNumber) {
             guess--
-            displayMessage('smaller')
+            displayMessage('guess high')
             chanceMessage(`You have ${guess} guesses left`)
         } else {
             document.querySelector('body').style.background = 'green'
