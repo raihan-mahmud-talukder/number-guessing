@@ -1,5 +1,3 @@
-document.write(`Welcome to the Number Guessing Game! <br> I am thinking of a number between 1 and 10`)
-
 const secretNumber = Math.trunc(Math.random() * 10 + 1)
 let guess = 3
 let loop = false
