@@ -7,7 +7,7 @@ let loop = false
 while (!loop) {
     console.log(`You have ${guess} guesses left`)
     let guessed_num = Number(prompt('Guess a number:'))
-    if (guessed_num != NaN) {
+    if (!isNaN(guessed_num)) {
         if (guessed_num > secretNumber) {
             guess--
             console.log(`higher`)
