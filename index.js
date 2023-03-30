@@ -5,23 +5,26 @@ let guess = 3
 let loop = false
 
 while (!loop) {
-    document.write(`You have ${guess} guesses left`)
+    console.log(`You have ${guess} guesses left`)
     let guessed_num = Number(prompt('Guess a number:'))
     if (guessed_num != NaN) {
         if (guessed_num > secretNumber) {
-            guess --
-            document.write(`higher`)
+            guess--
+            console.log(`higher`)
         } else if (guessed_num < secretNumber) {
-            guess ++
-            document.write(`Lower`)
-        } else document.write(`Correct Number`)
-        if (guess == 0) {
-            document.write(`You Loose`)
+            guess--
+            console.log(`Lower`)
+        } else {
+            console.log(`Correct Number`)
             loop = true
         }
-        document.write(`Number to be guessed:`, secretNumber)
+        if (guess == 0) {
+            console.log(`You Loose`)
+            loop = true
+            console.log(`Number to be guessed:`, secretNumber)
+        }
     } else {
         loop = true
-        document.write(`Invalid Input!`)
+        console.log(`Invalid Input!`)
     }
 }
