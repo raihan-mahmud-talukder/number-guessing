@@ -20,31 +20,31 @@ chanceMessage(`You have ${guess} guesses left`)
 check.addEventListener('click', () => {
     const guessed_num = input.value
     if (guessed_num) {
-        if (guessed_num > secretNumber) {
-            guess--
-            displayMessage('guess low')
-            chanceMessage(`You have ${guess} guesses left`)
-        } else if (guessed_num < secretNumber) {
-            guess--
-            displayMessage('guess high')
-            chanceMessage(`You have ${guess} guesses left`)
-        } else {
-            document.querySelector('body').style.background = 'green'
-            number.innerHTML = guessed_num
-            input.disabled = true
-            check.disabled = true
-            displayMessage(`Correct Number`)
-            chanceMessage(`You Won!`)
-        }
-        if (guess == 0) {
-            input.disabled = true
-            check.disabled = true
-            displayMessage(`Number to be guessed: ${secretNumber}`)
-            chanceMessage(`You Lost!`)
-        }
-    } else {
-        displayMessage(`Invalid Input!`)
-    }
+        if (guessed_num > 1 && guessed_num < 10) {
+            if (guessed_num > secretNumber) {
+                guess--
+                displayMessage('guess low')
+                chanceMessage(`You have ${guess} guesses left`)
+            } else if (guessed_num < secretNumber) {
+                guess--
+                displayMessage('guess high')
+                chanceMessage(`You have ${guess} guesses left`)
+            } else {
+                document.querySelector('body').style.background = 'green'
+                number.innerHTML = guessed_num
+                input.disabled = true
+                check.disabled = true
+                displayMessage(`Correct Number`)
+                chanceMessage(`You Won!`)
+            }
+            if (guess == 0) {
+                input.disabled = true
+                check.disabled = true
+                displayMessage(`Number to be guessed: ${secretNumber}`)
+                chanceMessage(`You Lost!`)
+            }
+        } else displayMessage(`Out of Range`)
+    } else displayMessage(`Invalid Input!`)
 })
 
 again.addEventListener('click', () => {
