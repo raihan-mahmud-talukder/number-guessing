@@ -20,7 +20,7 @@ chanceMessage(`You have ${guess} guesses left`)
 check.addEventListener('click', () => {
     const guessed_num = input.value
     if (guessed_num) {
-        if (guessed_num > 1 && guessed_num < 10) {
+        if (guessed_num >= 1 && guessed_num <= 10) {
             if (guessed_num > secretNumber) {
                 guess--
                 displayMessage('guess low')
